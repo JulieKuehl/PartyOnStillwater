@@ -18,6 +18,7 @@
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
+</div><!-- #swoop -->
 
 <?php wp_footer(); ?>
 
