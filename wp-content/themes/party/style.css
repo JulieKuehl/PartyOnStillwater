@@ -1,0 +1,496 @@
+﻿/*
+Theme Name: PartyOnStillwater
+Author: King Web Design @ http://www.kingwebdesignservices.com
+Version: 1.5
+*/
+html {
+	height:100%;
+	margin-bottom: 1px;
+	overflow-y: scroll;
+}
+body {
+	background: white url('images/bg.png') repeat-x;
+	padding: 0 0 15px 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#swoop {
+	background:transparent url('images/swoop.png') no-repeat center top;
+}
+#wrapper {
+	width: 988px;
+}
+.centerFloat {
+	position:relative;
+	margin: 0 auto 0 auto;
+}
+#header {
+	width:970px;
+	height: 158px;
+	background:transparent url('images/header.png') no-repeat;
+}
+#logo {
+	width:390px;
+	height:158px;
+}
+#nav {
+	width: 970px;
+	height:40px;
+	background:#ea128d;
+}
+.menu {
+    list-style:none;
+    float:left;
+    position:relative;
+    margin:0 !important;
+    padding:0 !important;
+    z-index:2000;
+}
+.menu li{
+    float:left;
+    position:relative;
+}
+.menu li a {
+	text-decoration:none;
+	line-height: 40px;
+	padding: 0 10px;
+	display:block;
+	color:white;
+	text-decoration: none;
+	font-size: 20px;
+	font-family:"Times New Roman", Times, serif;
+}
+.menu li a:hover{
+    color:#fff;
+	background:#ea128d;
+    text-decoration:none;
+}
+
+/*--- DROPDOWN ---*/
+.menu ul{
+    list-style:none;
+    position:absolute;
+    left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+}
+.menu ul li{
+    padding-top:0; /* Introducing a padding between the li and the a give the illusion spaced items */
+    float:none;
+}
+.menu ul a{
+    white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+}
+.menu li:hover ul{ /* Display the dropdown on hover */
+    left:-17px; /* Bring back on-screen when needed */
+}
+.menu li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+    background:#50b948;
+    text-decoration:none;
+}
+.menu li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
+    text-decoration:none;
+}
+.menu li:hover ul li a {
+	background:#ea128d;
+padding: 0 4px;
+margin: 0;
+}
+.menu li:hover ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+    background:#50b948;
+    text-decoration:none;
+}
+#facebook {
+	background:transparent url('images/facebook.png') no-repeat;
+	width:29px;
+	height:29px;
+	position:absolute;
+	top: 7px;
+	right: 7px;
+}
+#content {
+	width:948px;
+	overflow: hidden;
+	background:transparent url('images/content.png') repeat-y;
+	padding: 20px 20px 0 20px;
+	margin: 25px 0 0 0;
+}
+#primaryHome, {
+	width:948px;
+}
+#primaryWide {
+	width:948px;
+	padding: 0 0 20px 0;
+	float: left;
+}
+#primary {
+	width: 615px;
+	padding: 0 20px 0 0;
+	float: left;
+}
+#secondary {
+	width: 300px;
+	padding: 20px 10px;
+	float: right;
+	background:#00a4e4;
+	margin: -20px -11px 0 0;
+}
+#footer {
+	width: 970px;
+	height: 60px;
+	background:black url('images/bg.png') repeat;
+	position: relative;
+	margin: 0 auto;
+	left: -11px;
+	color:white;
+	padding: 20px 0 0 0;
+}
+#footer a {
+	color:white;
+	text-decoration:none;
+}
+/** content **/
+h1, h2, h3, h4, h5, h6 {
+	color: #ea128d;
+	line-height: 1em;
+	margin: 0 0 20px 0;
+	font-weight:normal;
+	font-family:"Times New Roman", Times, serif;
+}
+p {
+	font-size: 16px;
+	line-height: 20px;
+	padding:0;
+    margin: 0;
+}
+#content p {
+	padding:0 0 16px 0 !important;
+}
+blockquote {
+	font-style: italic;
+	padding: 0 15px;
+}
+cite, em, i {
+	font-style: italic;
+}
+ul {
+	list-style: disc;
+	margin: 0 0 24px 17px;
+}
+#content ul {
+	margin: 0 0 24px 0;
+	overflow: hidden;
+	padding: 0 0 0 15px;
+}
+ul.eshop {
+	margin: 0 !important;
+	padding: 0 !important;;
+}
+ol {
+	list-style: decimal;
+	margin: 0 0 24px 17px;
+}
+.alignleft, img.alignleft {
+	display: inline;
+	float: left;
+	margin: 0 10px 12px 0;
+}
+.alignright, img.alignright {
+	display: inline;
+	float: right;
+	margin: 0 0 12px 10px;
+}
+.aligncenter, img.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto 12px auto;
+}
+/** The Loop **/
+#content .title, #content .singleTitle {
+	font-size: 32px;
+	font-weight: bold;
+	line-height: 38px;
+	margin-bottom: 14px;
+}
+.greenDots {
+	background:transparent url('images/green-dots.png') repeat-x;
+	width:100%;
+	height:5px;
+}
+.archiveTitle {
+	color: black;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0 0 15px 0;
+}
+.title a:link, .title a:visited {
+    color: black;
+    text-decoration: none;
+}
+.time {
+	color: #888;
+    font-size: 12px;
+}
+.entry {
+	clear: both;
+	padding: 12px 0 0 0;
+}
+.more-link {
+	color: #000000;
+	text-decoration:none;
+}
+p.postmetadata {
+	color: #888;
+	font-size: 12px;
+	line-height: 18px;
+	margin: 0 !important;
+	padding:15px 0 15px 0 !important;
+}
+p.postmetadata a {
+	color: #888;
+}
+.navigation {
+	color: #888;
+	font-size: 12px;
+	line-height: 18px;
+}
+.navigation a:link, .navigation a:visited {
+	color: #888;
+	text-decoration: none;
+}
+.alignLeft {
+	float: left;
+}
+.alignRight {
+	float: right;
+}
+/** comments **/
+#commentsWrapper {
+	clear: both;
+}
+.comment-author cite, .comment-author cite a {
+	color: black;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration:none;
+}
+.commentlist {
+	list-style: none;
+    margin: 15px 0;
+}
+.commentlist li.comment {
+	border-bottom: 1px solid #E7E7E7;
+	line-height: 24px;
+	margin: 0 0 24px 0;
+	padding: 0 0 0 20px;
+	position: relative;
+}
+.commentlist .children {
+	list-style: none;
+	margin: 0;
+}
+.comment-meta {
+	font-size: 12px;
+	margin: 0 0 18px 0;
+}
+.comment-meta a:link, .comment-meta a:visited {
+	color: #888;
+	text-decoration: none;
+}
+.reply, #comments {
+	margin: 18px 0;
+	color: black;
+	font-size: 20px;
+	font-weight: bold
+}
+.reply a {
+	color: #888;
+	font-size: 12px;
+}
+#respond {
+	border-top: 1px solid #E7E7E7;
+	margin: 24px 0;
+	overflow: hidden;
+	position: relative;
+}
+/** sidebar **/
+#secondary ul {
+	list-style-type:none;
+	padding:0;
+	margin:0;
+}
+.widget {
+    margin: 0 0 18px 0;
+}
+.widget_search label {
+    display: none;
+}
+#secondary h3 {
+	color:black !important;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+.widget-area ul {
+	list-style: none;
+	margin-left: 0;
+}
+.widget-area ul ul {
+	border: none;
+	margin-left: 15px;
+	padding: 0;
+	list-style: square;
+}
+.widget-area a:link, .widget-area a:visited {
+	text-decoration: none;
+	color:#000000;
+	font-size: 12px;
+	line-height:16px;
+}
+.widget-area a:hover {
+	color: #ff4b33;
+}
+/** Misc **/
+#slideshow {
+	width:536px;
+	height:357px;
+	float:left;
+	border: 10px solid black;
+	background: black;
+}
+#homeRight {
+	width: 337px;
+	float:right;
+	margin-right: 24px;
+}
+#bottomPics {
+	width:970px;
+	height: 290px;
+	background:transparent url('images/picture-links.jpg') no-repeat;
+	margin: 15px 0 0 0;
+	position: relative;
+	left: -11px;
+}
+img.post-pic {
+	width:450px !important;
+	height:auto !important;;
+}
+#baskets {
+width: 285px;
+height: 230px;
+position: absolute;
+top: 24px;
+left: 24px;
+}
+#planning {
+width: 285px;
+height: 230px;
+position: absolute;
+top: 23px;
+left: 341px;
+}
+#products {
+	width:285px;
+	height: 230px;
+position: absolute;
+top: 24px;
+left: 662px;
+}
+.nivo-controlNav {
+display: block !important;
+}
+.nivo-controlNav {
+position: absolute;
+bottom: -27px !important;
+left: 0 !important;
+}
+/** eshop **/
+ul.eshoppanels > li {
+	width: 180px !important;;
+	height: 260px !important;
+}
+.paginate eshop-paginate {
+	display:none;
+}
+ul.eshop li a.itemref img {
+	margin:5px auto;
+}
+ul.eshop fieldset {
+	margin:10px 0 0 0 !important;
+}
+ul.eshoppanels > li form select, ul.eshoppanels > li form input {
+	margin: 0 auto 3px !important;
+}
+form.eshop label {
+	margin-right: 0 !important;
+}
+/** recent posts **/
+#latestHome {
+	width: 286px;
+	float: right;
+	border: 1px solid black;
+	margin: 15px 15px 15px 0;
+}
+#wdg_specialrecentpostsfree-2 {
+	width: 286px;
+	border: 1px solid black;
+	position:relative;
+	margin:0 auto 15px auto !important;;
+}
+.srp-thumbnail-box {
+	padding-right: 5px !important;
+}
+h3.srp-widget-title {
+	background:transparent url('images/upcoming-events.png') no-repeat;
+	width:262px;
+	height:42px;
+	margin:15px 0 !important;
+}
+h4.srp-post-title {
+	margin:0 0 3px 0 !important;
+}
+.srp-post-title-link {
+	text-decoration: none;
+	color: black;
+}
+.srp-widget-container {
+	width: 260px;
+	position: relative;
+	margin: 0 auto;
+}
+div.srp-widget-singlepost {
+	padding: 0 !important;
+	margin: 0px 0px 10px 0px;
+	border-bottom: none !important;
+	clear: both;
+}
+.srp-post-title a {
+	font-size:16px !important;
+	font-weight:bold;
+	position: relative;
+	top: 0px;
+}
+.srp-widget-date {
+	display:none;
+}
+.srp-widget-excerpt {
+	font-size:12px !important;
+	line-height:14px !important;
+	padding:0 0 12px 0 !important;
+}
+a.srp-widget-stringbreak-link {
+	margin:0 0 0 3px;
+}
+/** misc **/
+#facebookHome {
+	width: 602px;
+	height:427px;
+	float: left;
+	margin: 15px 0 15px 15px;
+}
+#categories-3 h3 {
+	display:none;
+}
+#categories-3 {
+	margin: 0 !important;
+	width: 500px;
+	position: absolute;
+	top: 144px;
+	left: 170px;
+}
