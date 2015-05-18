@@ -1,0 +1,14 @@
+.site-footer {
+    background-color: black;
+    color: white;
+    width: 100%;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: $color__link-hover;
+    }
+}

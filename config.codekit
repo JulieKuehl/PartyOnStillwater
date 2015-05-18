@@ -4345,6 +4345,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/wp-content\/themes\/partyonstillwater\/css\/style.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/partyonstillwater\/css\/style.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/wp-content\/themes\/partyonstillwater\/footer.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -4852,15 +4861,6 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/wp-content\/themes\/partyonstillwater\/sass\/site\/footer.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/wp-content\/themes\/partyonstillwater\/sass\/site\/footer.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/wp-content\/themes\/partyonstillwater\/sass\/site\/primary\/_asides.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -4898,7 +4898,7 @@
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/partyonstillwater\/sass\/site\/primary\/_footer.scss",
 		"outputAbbreviatedPath": "\/wp-content\/themes\/partyonstillwater\/sass\/site\/css\/_footer.css",
