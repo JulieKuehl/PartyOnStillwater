@@ -39,7 +39,7 @@ function partyonstillwater_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -89,15 +89,49 @@ add_action( 'after_setup_theme', 'partyonstillwater_content_width', 0 );
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function partyonstillwater_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'partyonstillwater' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
+//	register_sidebar( array(
+//		'name'          => esc_html__( 'Sidebar', 'partyonstillwater' ),
+//		'id'            => 'sidebar-1',
+//		'description'   => '',
+//		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+//		'after_widget'  => '</aside>',
+//		'before_title'  => '<h1 class="widget-title">',
+//		'after_title'   => '</h1>',
+//	)
+
+	// brought over from previous theme
+	   register_sidebar(array(
+		   'name' => 'sidebar',
+		   'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		   'after_widget' => '</div>',
+		   'before_title' => '<h3>',
+		   'after_title' => '</h3>'
+	   ));
+
+	   register_sidebar(array(
+		   'name' => 'footer',
+		   'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		   'after_widget' => '</div>',
+		   'before_title' => '<h3>',
+		   'after_title' => '</h3>'
+	   ));
+
+	   register_sidebar(array(
+		   'name' => 'latestHome',
+		   'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		   'after_widget' => '</div>',
+		   'before_title' => '<h3>',
+		   'after_title' => '</h3>'
+	   ));
+
+	   register_sidebar(array(
+		   'name' => 'categories',
+		   'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		   'after_widget' => '</div>',
+		   'before_title' => '<h3>',
+		   'after_title' => '</h3>'
+	   )
+	);
 }
 add_action( 'widgets_init', 'partyonstillwater_widgets_init' );
 
