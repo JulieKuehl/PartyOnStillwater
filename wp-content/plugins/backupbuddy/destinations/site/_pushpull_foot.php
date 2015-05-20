@@ -147,9 +147,9 @@ $backup_url .= '?page=pb_backupbuddy_backup';
 			_e( 'Push', 'it-l10n-backupbuddy' );
 		}
 		echo ' ';
-		_e( 'Plugins', 'LIONS' );
+		_e( 'Active Plugins', 'LIONS' );
 	?></h3>
-	<label><input type="checkbox" name="sendPlugins" value="true"> Update destination plugins with newer or missing versions to match.</label>
+	<label><input type="checkbox" name="sendPlugins" value="true"> Update plugins with newer or missing versions to match.</label>
 	<br><br>
 	
 	<h3><?php
@@ -161,16 +161,34 @@ $backup_url .= '?page=pb_backupbuddy_backup';
 		echo ' ';
 		_e( 'Active Theme', 'LIONS' ); ?></h3>
 	<?php
+	// Main theme
 	if ( $deployData['remoteInfo']['activeTheme'] == $localInfo['activeTheme'] ) {
-		echo '<label><input type="checkbox" name="sendTheme" value="true"> Update destination active theme files with newer or missing files to match.</label>';
+		echo '<label><input type="checkbox" name="sendTheme" value="true"> Update <b>theme files</b> (template) with newer or missing files to match.</label>';
 	} else {
 		echo '<span class="description">' . __( 'Active theme differs so theme deployment is disabled.', 'it-l10n-backupbuddy' ) . '</span>';
 	}
+	echo '<br>';
+	
+	// Child theme.
+	if ( isset( $deployData['remoteInfo']['activeChildTheme'] ) ) {
+		if ( $deployData['remoteInfo']['activeChildTheme'] == $localInfo['activeChildTheme'] ) { // Remote and local child theme are the same.
+			if ( $localInfo['activeChildTheme'] != $localInfo['activeTheme'] ) { // Theme and childtheme differ so files will need sent.
+				echo '<label><input type="checkbox" name="sendChildTheme" value="true"> Update <b>child theme files</b> (stylesheet) with newer or missing files to match.</label>';
+			} else { // Theme and childtheme are same directory so only theme will be needed to pull/push.
+				echo '<span class="description">' . __( 'Child theme & theme are the same so files will not be re-sent.', 'it-l10n-backupbuddy' ) . '</span>';
+			}
+		} else {
+			echo '<span class="description">' . __( 'Active child theme differs so theme deployment is disabled.', 'it-l10n-backupbuddy' ) . '</span>';
+		}
+	} else {
+		echo '<span class="description">' . __( 'Remote site does not support deploying child theme. Update remote BackupBuddy.', 'it-l10n-backupbuddy' ) . '</span>';
+	}
+	
 	?>
 	<br><br>
 	
 	<h3><?php _e( 'Source Media / Atachments', 'LIONS' ); ?></h3>
-	<label><input type="checkbox" name="sendMedia" value="true"> Update destination media files with newer or missing files to match.</label>
+	<label><input type="checkbox" name="sendMedia" value="true"> Update media files with newer or missing files to match.</label>
 	<br><br>
 	
 	<br>

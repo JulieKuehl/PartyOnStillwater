@@ -1176,6 +1176,8 @@ class pb_backupbuddy_backup {
 			'users'						=> $totalUsers,											// Total users on site.st
 			
 			// Database Info. Remaining sensitive info added in after printing out DAT (for security).
+			'db_charset'				=> $wpdb->charset,									// Charset of the database. Eg utf8, utfmb4. @since v6.0.0.6.
+			'db_collate'				=> $wpdb->collate,									// Collate of the database. Eg utf8, utfmb4. @since v6.0.0.6.
 			'db_prefix'					=> $wpdb->prefix,
 			'db_server'					=> DB_HOST,
 			'db_name'					=> DB_NAME,
@@ -2367,6 +2369,7 @@ class pb_backupbuddy_backup {
 		$mediaFileCount = 0;
 		$pluginFileCount = 0;
 		$themeFileCount = 0;
+		$childThemeFileCount = 0;
 		if ( true === $state['sendMedia'] ) {
 			$mediaFileCount = count( $state['pullMediaFiles'] );
 		}
@@ -2376,7 +2379,11 @@ class pb_backupbuddy_backup {
 		if ( true === $state['sendTheme'] ) {
 			$themeFileCount = count( $state['pullThemeFiles'] );
 		}
-		$filesRemaining = $mediaFileCount + $pluginFileCount + $themeFileCount;
+		if ( true === $state['sendChildTheme'] ) {
+			$childThemeFileCount = count( $state['pullChildThemeFiles'] );
+		}
+		
+		$filesRemaining = $mediaFileCount + $pluginFileCount + $themeFileCount + $childThemeFileCount;
 		if ( '' != $pullBackupArchive ) { // add in backup archive if not yet sent.
 			$filesRemaining++;
 		}
@@ -2419,10 +2426,20 @@ class pb_backupbuddy_backup {
 		} else {
 			if ( $themeFileCount > 0 ) { // Plugin files remain to send.
 				$getFile = array_pop( $state['pullThemeFiles'] ); // Pop off last item in array. Faster than shift.
-				//$themePath = WP_CONTENT_DIR . '/themes/';
 				$themePath = get_template_directory(); // contains trailing slash.
 				$nextStep['args'] = array( $state );
 				return $this->deploy_getFile( $state, $themePath, $getFile, 'theme', $nextStep );
+			}
+		}
+		
+		if ( true !== $state['sendChildTheme'] ) {
+			pb_backupbuddy::status( 'details', 'SKIPPING pull of child theme files.' );
+		} else {
+			if ( $childThemeFileCount > 0 ) { // Plugin files remain to send.
+				$getFile = array_pop( $state['pullChildThemeFiles'] ); // Pop off last item in array. Faster than shift.
+				$childThemePath = get_stylesheet_directory(); // contains trailing slash.
+				$nextStep['args'] = array( $state );
+				return $this->deploy_getFile( $state, $childThemePath, $getFile, 'childTheme', $nextStep );
 			}
 		}
 		
@@ -2705,6 +2722,7 @@ class pb_backupbuddy_backup {
 		$mediaFileCount = 0;
 		$pluginFileCount = 0;
 		$themeFileCount = 0;
+		$childThemeFileCount = 0;
 		if ( true === $state['sendMedia'] ) {
 			$mediaFileCount = count( $state['pushMediaFiles'] );
 		}
@@ -2714,7 +2732,10 @@ class pb_backupbuddy_backup {
 		if ( true === $state['sendTheme'] ) {
 			$themeFileCount = count( $state['pushThemeFiles'] );
 		}
-		$filesRemaining = $mediaFileCount + $pluginFileCount + $themeFileCount;
+		if ( true === $state['sendChildTheme'] ) {
+			$childThemeFileCount = count( $state['pushChildThemeFiles'] );
+		}
+		$filesRemaining = $mediaFileCount + $pluginFileCount + $themeFileCount + $childThemeFileCount;
 		pb_backupbuddy::status( 'deployFilesRemaining', $filesRemaining );
 		pb_backupbuddy::status( 'details', 'Files remaining to send: ' . $filesRemaining );
 		
@@ -2746,10 +2767,20 @@ class pb_backupbuddy_backup {
 		} else {
 			if ( $themeFileCount > 0 ) { // Plugin files remain to send.
 				$sendFile = array_pop( $state['pushThemeFiles'] ); // Pop off last item in array. Faster than shift.
-				//$themePath = WP_CONTENT_DIR . '/themes/';
 				$themePath = get_template_directory(); // contains trailing slash.
 				$nextStep['args'] = array( $state );
 				return $this->deploy_push_sendFile( $state, $themePath . $sendFile, $sendFile, 'theme', $nextStep );
+			}
+		}
+		
+		if ( true !== $state['sendChildTheme'] ) {
+			pb_backupbuddy::status( 'details', 'SKIPPING push of child theme files.' );
+		} else {
+			if ( $childThemeFileCount > 0 ) { // Plugin files remain to send.
+				$sendFile = array_pop( $state['pushChildThemeFiles'] ); // Pop off last item in array. Faster than shift.
+				$childThemePath = get_stylesheet_directory(); // contains trailing slash.
+				$nextStep['args'] = array( $state );
+				return $this->deploy_push_sendFile( $state, $childThemePath . $sendFile, $sendFile, 'childTheme', $nextStep );
 			}
 		}
 		

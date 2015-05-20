@@ -1205,6 +1205,12 @@ if ( 'deploy' == pb_backupbuddy::_GET( 'backupbuddy_backup' ) ) {
 		$deployData['sendTheme'] = false;
 	}
 	
+		if ( 'true' == pb_backupbuddy::_POST( 'sendChildTheme' ) ) {
+		$deployData['sendChildTheme'] = true;
+	} else {
+		$deployData['sendChildTheme'] = false;
+	}
+	
 	if ( 'true' == pb_backupbuddy::_POST( 'sendPlugins' ) ) {
 		$deployData['sendPlugins'] = true;
 	} else {

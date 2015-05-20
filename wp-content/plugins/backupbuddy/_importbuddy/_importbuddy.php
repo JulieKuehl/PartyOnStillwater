@@ -24,8 +24,8 @@ define( 'PB_BB_VERSION', '#VERSION#' );
 define( 'PB_PASSWORD', '#PASSWORD#' );
 
 // Used by wpdb class.
-define('DB_CHARSET', 'utf8');
-define('DB_COLLATE', '');
+define('DB_CHARSET', 'utf8'); // Default only. Overriden later if needed.
+define('DB_COLLATE', ''); // Default only. Overriden alter if needed.
 
 @date_default_timezone_set( @date_default_timezone_get() ); // Prevents date() from throwing a warning if the default timezone has not been set. Run prior to any file_exists()!
 

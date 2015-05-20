@@ -68,6 +68,10 @@
         li:hover {
             background-color: $color__background-nav-hover;
         }
+
+        a:hover {
+            color: $color-_text-main;
+        }
     }
 }
 

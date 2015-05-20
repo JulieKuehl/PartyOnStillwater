@@ -95,10 +95,16 @@ class pb_backupbuddy_filesystem {
 	 */
 	function deepglob( $dir ) {
 		$items = glob( $dir . '/*' );
+		if ( false === $items ) {
+			$items = array();
+		}
 		
 		for ( $i = 0; $i < count( $items ); $i++ ) {
 			if ( is_dir( $items[$i] ) ) {
 				$add = glob( $items[$i] . '/*' );
+				if ( false === $add ) {
+					$add = array();
+				}
 				$items = array_merge( $items, $add );
 			}
 		}

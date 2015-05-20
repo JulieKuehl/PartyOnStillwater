@@ -29,10 +29,10 @@ $rows = $wpdb->get_results( "SHOW TABLE STATUS", ARRAY_A );
 foreach( $rows as $row ) {
 	
 	// Hide BackupBuddy temp tables.
-	if ( 'BBold-' == substr( $row['Name'], 0, 6 ) ) {
+	if ( 'bbold-' == substr( $row['Name'], 0, 6 ) ) {
 		continue;
 	}
-	if ( 'BBnew-' == substr( $row['Name'], 0, 6 ) ) {
+	if ( 'bbnew-' == substr( $row['Name'], 0, 6 ) ) {
 		continue;
 	}
 	
@@ -52,10 +52,13 @@ function backupbuddy_startsWith($haystack, $needle) {
  *
  * Calculate comparison data for all files within a path. Useful for tracking file changes between two locations.
  *
+ * @param	array 	$excludes	Directories to exclude, RELATIVE to the root. Include LEADING slash for each entry.
+ *
  */
 function backupbuddy_hashGlob( $root, $generate_sha1 = false, $excludes = array() ) {
 	
-	//$root = rtrim( $root, '/\\' );
+	$root = rtrim( $root, '/\\' ); // Make sure no trailing slash.
+	$excludes = str_replace( $root, '', $excludes );
 	$files = (array) pb_backupbuddy::$filesystem->deepglob( $root );
 	$root_len = strlen( $root );
 	$hashedFiles = array();
@@ -149,7 +152,7 @@ $inactivePluginDirs = array_diff( $allPluginDirs, $activePluginDirs ); // Remove
 $inactivePluginDirs[] = pb_backupbuddy::plugin_path(); // Also exclude BackupBuddy directory.
 
 
-
+// Calculate media files signatures.
 $upload_dir = wp_upload_dir();
 $mediaExcludes = array(
 	'/backupbuddy_backups',
@@ -158,6 +161,13 @@ $mediaExcludes = array(
 );
 $mediaSignatures = backupbuddy_hashGlob( $upload_dir['basedir'], $sha1, $mediaExcludes );
 
+
+// Calculate child theme file signatures, excluding main theme directory..
+if ( get_stylesheet_directory() == get_template_directory() ) { // Theme & childtheme are same so do not send any childtheme files!
+	$childThemeSignatures = array();
+} else {
+	$childThemeSignatures = backupbuddy_hashGlob( get_stylesheet_directory(), $sha1 );
+}
 
 
 global $wp_version;
@@ -178,8 +188,10 @@ return array(
 	'dbPrefix'					=> $wpdb->prefix,
 	'activePlugins'				=> $activePlugins,
 	'activeTheme'				=> get_template(),
+	'activeChildTheme'			=> get_stylesheet(),
 	'themeSignatures'			=> backupbuddy_hashGlob( get_template_directory(), $sha1 ),
-	'pluginSignatures'			=> backupbuddy_hashGlob( WP_PLUGIN_DIR . '/', $sha1, $inactivePluginDirs ),
+	'childThemeSignatures'		=> $childThemeSignatures,
+	'pluginSignatures'			=> backupbuddy_hashGlob( WP_PLUGIN_DIR, $sha1, $inactivePluginDirs ),
 	'mediaSignatures'			=> $mediaSignatures,
 	'mediaCount'				=> count( $mediaSignatures ),
 	'notifications'				=> array(), // Array of string notification messages.

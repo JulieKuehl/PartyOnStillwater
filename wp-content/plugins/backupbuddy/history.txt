@@ -1238,4 +1238,17 @@
 	Removed debugging data from displaying when running the periodic cleanup.
 6.0.0.5 - 2015-05-12 - Dustin Bolton
 	Changed Error #8483974 to Error #8002. Added additional information on potential causes.
+6.0.1.0 - 2015-05-13 - Dustin Bolton
+	Deployment: Added support for deploying Child Themes.
+	Deployment: Fixed minor bug causing inactive plugin files to be deployed. Note: If database is not deployed then it may still shows plugin files as needing transferred as only active plugins on both side are compared.
+	Deployment: Fixed minor bug causing BackupBuddy plugin files to be deployed.
+	mysqlbuddy: Database default charset is now set to match that within $wpdb->charset for commandline based dumping or importing.
+	DAT file now stores $wpdb->charset (in db_charset) and $wpdb->collate (in db_collate) for use by ImportBuddy for setting default charset details prior to executing SQL.
+	ImportBuddy: Fixed inability to import database rows containing utf8mb4 characters.
+	Better support for utf8mb4 (utf8mb4 encoding added in WordPRess v4.2).
+	Official release of all quick release updates 6.0.0.1-6.0.0.5.
+6.0.1.1 - 2015-05-16 - Dustin Bolton
+	Temporary database table name prefixes for rollback or deployment now use bbnew- and bbold- instead of BBnew- and BBold- for some systems that convert uppercase characters in table names to all lowercase, breaking various replacements.
+6.0.1.2 - 2015-05-18 - Dustin Bolton
+	filesystem class deepglob() now checks if glob responds with false and changes to empty array to prevent invalid argument warning.
 	

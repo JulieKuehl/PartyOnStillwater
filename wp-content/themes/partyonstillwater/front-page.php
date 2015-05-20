@@ -16,7 +16,7 @@ get_header(); ?>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
-		<div class="slider"></div><!-- end .slider -->
+		<div class="slider"><?php if ( function_exists( 'meteor_slideshow' ) ) { meteor_slideshow(); } ?></div><!-- end .slider -->
 
 		<div class="main-content">
 			<div class="main-content-col-1">

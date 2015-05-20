@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the BackupBuddy package.
 msgid ""
 msgstr ""
-"Project-Id-Version: BackupBuddy 6.0.0.5\n"
+"Project-Id-Version: BackupBuddy 6.0.1.2\n"
 "Report-Msgid-Bugs-To: http://ithemes.com/forum/\n"
-"POT-Creation-Date: 2015-05-13 02:48:35+00:00\n"
+"POT-Creation-Date: 2015-05-18 22:58:10+00:00\n"
 "PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: _importbuddy/importbuddy/classes/wp-db.php:836
+#: _importbuddy/importbuddy/classes/wp-db.php:842
 msgid ""
 "<h1>Can&#8217;t select database</h1>\n"
 "<p>We were able to connect to the database server (which means your username "
@@ -32,15 +32,15 @@ msgid ""
 "\"http://wordpress.org/support/\">WordPress Support Forums</a>.</p>"
 msgstr ""
 
-#: _importbuddy/importbuddy/classes/wp-db.php:1031
+#: _importbuddy/importbuddy/classes/wp-db.php:1037
 msgid "WordPress database error %1$s for query %2$s made by %3$s"
 msgstr ""
 
-#: _importbuddy/importbuddy/classes/wp-db.php:1033
+#: _importbuddy/importbuddy/classes/wp-db.php:1039
 msgid "WordPress database error %1$s for query %2$s"
 msgstr ""
 
-#: _importbuddy/importbuddy/classes/wp-db.php:1149
+#: _importbuddy/importbuddy/classes/wp-db.php:1155
 msgid ""
 "\n"
 "<h1>Error establishing a database connection</h1>\n"
@@ -58,7 +58,7 @@ msgid ""
 "wordpress.org/support/'>WordPress Support Forums</a>.</p>\n"
 msgstr ""
 
-#: _importbuddy/importbuddy/classes/wp-db.php:1667
+#: _importbuddy/importbuddy/classes/wp-db.php:1673
 msgid "<strong>ERROR</strong>: WordPress %1$s requires MySQL %2$s or higher"
 msgstr ""
 
@@ -219,7 +219,7 @@ msgstr ""
 msgid "Sending scheduled backup start email notification if applicable."
 msgstr ""
 
-#: classes/backup.php:221 classes/backup.php:2119
+#: classes/backup.php:221 classes/backup.php:2121
 msgid "Scheduled backup"
 msgstr ""
 
@@ -291,15 +291,15 @@ msgstr ""
 msgid "Backup completed successfully."
 msgstr ""
 
-#: classes/backup.php:1044 lib/mysqlbuddy/mysqlbuddy.php:472
+#: classes/backup.php:1044 lib/mysqlbuddy/mysqlbuddy.php:479
 msgid ""
 "Database Server has gone away, unable to schedule next backup step. The "
 "backup cannot continue. This is most often caused by mysql running out of "
 "memory or timing out far too early. Please contact your host."
 msgstr ""
 
-#: classes/backup.php:1049 classes/backup.php:1473 classes/backup.php:1799
-#: classes/core.php:1906 lib/mysqlbuddy/mysqlbuddy.php:477
+#: classes/backup.php:1049 classes/backup.php:1475 classes/backup.php:1801
+#: classes/core.php:1906 lib/mysqlbuddy/mysqlbuddy.php:484
 msgid "Database Server connection status unverified."
 msgstr ""
 
@@ -307,109 +307,109 @@ msgstr ""
 msgid "Creating DAT (data) file snapshotting site & backup information."
 msgstr ""
 
-#: classes/backup.php:1206
+#: classes/backup.php:1208
 msgid "Compensating for SSL in siteurl."
 msgstr ""
 
-#: classes/backup.php:1223
+#: classes/backup.php:1225
 msgid ""
 "Error #9017: Temp data file is not creatable/writable. Check your "
 "permissions. (%s)"
 msgstr ""
 
-#: classes/backup.php:1230
+#: classes/backup.php:1232
 msgid "Finished creating DAT (data) file."
 msgstr ""
 
-#: classes/backup.php:1248
+#: classes/backup.php:1250
 msgid "Starting database backup process."
 msgstr ""
 
-#: classes/backup.php:1389 classes/backup.php:1674 classes/backup.php:1730
+#: classes/backup.php:1391 classes/backup.php:1676 classes/backup.php:1732
 msgid "Backup ZIP file successfully created."
 msgstr ""
 
-#: classes/backup.php:1391 classes/backup.php:1676 classes/backup.php:1732
+#: classes/backup.php:1393 classes/backup.php:1678 classes/backup.php:1734
 msgid "Chmod of ZIP file to 0644 succeeded."
 msgstr ""
 
-#: classes/backup.php:1393 classes/backup.php:1678 classes/backup.php:1734
+#: classes/backup.php:1395 classes/backup.php:1680 classes/backup.php:1736
 msgid "Chmod of ZIP file to 0644 failed."
 msgstr ""
 
-#: classes/backup.php:1436 classes/backup.php:1647 classes/backup.php:1704
-#: classes/backup.php:1760 classes/backup.php:2013
+#: classes/backup.php:1438 classes/backup.php:1649 classes/backup.php:1706
+#: classes/backup.php:1762 classes/backup.php:2015
 msgid "Removing temp data directory."
 msgstr ""
 
-#: classes/backup.php:1442 classes/backup.php:1653 classes/backup.php:1710
-#: classes/backup.php:1766 classes/backup.php:2018
+#: classes/backup.php:1444 classes/backup.php:1655 classes/backup.php:1712
+#: classes/backup.php:1768 classes/backup.php:2020
 msgid "Removing temp zip directory."
 msgstr ""
 
-#: classes/backup.php:1446 classes/backup.php:1657 classes/backup.php:1714
-#: classes/backup.php:1770
+#: classes/backup.php:1448 classes/backup.php:1659 classes/backup.php:1716
+#: classes/backup.php:1772
 msgid ""
 "Error #4001: Unable to successfully generate ZIP archive. Backup FAILED. See "
 "logs above for more information."
 msgstr ""
 
-#: classes/backup.php:1466 classes/backup.php:1792
+#: classes/backup.php:1468 classes/backup.php:1794
 msgid ""
 "Backup FAILED. Backup file produced but Database Server has gone away, "
 "unable to schedule next backup step"
 msgstr ""
 
-#: classes/backup.php:1815
+#: classes/backup.php:1817
 msgid "Trimming old archives (if needed)."
 msgstr ""
 
-#: classes/backup.php:1835
+#: classes/backup.php:1837
 msgid "No old archive trimming needed."
 msgstr ""
 
-#: classes/backup.php:1871
+#: classes/backup.php:1873
 msgid ""
 "Deleting old archive `%s` as it causes archives to exceed total number of "
 "FULL backups allowed."
 msgstr ""
 
-#: classes/backup.php:1889
+#: classes/backup.php:1891
 msgid ""
 "Deleting old archive `%s` as it causes archives to exceed total number of "
 "DATABASE backups allowed."
 msgstr ""
 
-#: classes/backup.php:1907
+#: classes/backup.php:1909
 msgid ""
 "Deleting old archive `%s` as it causes archives to exceed total number of "
 "FILES backups allowed."
 msgstr ""
 
-#: classes/backup.php:1924
+#: classes/backup.php:1926
 msgid ""
 "Deleting old archive `%s` as it causes archives to exceed total number "
 "allowed."
 msgstr ""
 
-#: classes/backup.php:1940
+#: classes/backup.php:1942
 msgid ""
 "Deleting old archive `%s` due as it causes archives to exceed total size "
 "allowed."
 msgstr ""
 
-#: classes/backup.php:1946
+#: classes/backup.php:1948
 msgid ""
 "ERROR #9028: Based on your backup archive limits (size limit) the backup "
 "that was just created would be deleted. Skipped deleting this backup. Please "
 "update your archive limits."
 msgstr ""
 
-#: classes/backup.php:1970
+#: classes/backup.php:1972
 msgid "Scanning and verifying backup file integrity."
 msgstr ""
 
-#: classes/backup.php:1982
+#: classes/backup.php:1984
 msgid ""
 "Backup failed to pass integrity check. The backup may have failed OR the "
 "backup may be valid but the integrity check could not verify it. This could "
@@ -419,27 +419,27 @@ msgid ""
 "to manually verify the backup file is functional or re-scan."
 msgstr ""
 
-#: classes/backup.php:1989
+#: classes/backup.php:1991
 msgid "Sending integrity check failure email."
 msgstr ""
 
-#: classes/backup.php:2009
+#: classes/backup.php:2011
 msgid "Cleaning up after backup."
 msgstr ""
 
-#: classes/backup.php:2045
+#: classes/backup.php:2047
 msgid "Final ZIP file size"
 msgstr ""
 
-#: classes/backup.php:2117
+#: classes/backup.php:2119
 msgid "Sending scheduled backup complete email notification."
 msgstr ""
 
-#: classes/backup.php:2126
+#: classes/backup.php:2128
 msgid "Finished cleaning up."
 msgstr ""
 
-#: classes/backup.php:2133
+#: classes/backup.php:2135
 msgid ""
 "As this backup did not pass the integrity check you should verify it "
 "manually or re-scan. Integrity checks can fail on good backups due to "
@@ -448,15 +448,15 @@ msgid ""
 "notified of potentially bad backups."
 msgstr ""
 
-#: classes/backup.php:2204
+#: classes/backup.php:2206
 msgid "Error. Unable to delete local archive as requested."
 msgstr ""
 
-#: classes/backup.php:2207
+#: classes/backup.php:2209
 msgid "Deleted local archive as requested."
 msgstr ""
 
-#: classes/backup.php:2244
+#: classes/backup.php:2246
 msgid "Fatal Error #9034 E. Unable to access fileoptions data."
 msgstr ""
 
@@ -1148,7 +1148,7 @@ msgid ""
 "likely result in a failed backup."
 msgstr ""
 
-#: controllers/pages/_backup-perform.php:1276
+#: controllers/pages/_backup-perform.php:1282
 msgid ""
 "Fatal Error #4344443: Backup failure. Please see any errors listed in the "
 "Status Log for details."
@@ -3025,11 +3025,21 @@ msgstr ""
 msgid "Active theme differs so not updating."
 msgstr ""
 
-#: destinations/site/_pull.php:30
+#: destinations/site/_pull.php:36 destinations/site/_push.php:37
+msgid "Active child theme differs so not updating."
+msgstr ""
+
+#: destinations/site/_pull.php:41 destinations/site/_push.php:42
+msgid ""
+"Unknown [NOTE: Remote site does not support detecting child theme. Update "
+"remote BackupBuddy]"
+msgstr ""
+
+#: destinations/site/_pull.php:50
 msgid "<b>Pulling</b> from (source)"
 msgstr ""
 
-#: destinations/site/_pull.php:30
+#: destinations/site/_pull.php:50
 msgid "To this site (destination)"
 msgstr ""
 
@@ -3042,11 +3052,11 @@ msgid ""
 "the changes and undo the database changes before making them permanent."
 msgstr ""
 
-#: destinations/site/_push.php:30
+#: destinations/site/_push.php:48
 msgid "From this site (source)"
 msgstr ""
 
-#: destinations/site/_push.php:30
+#: destinations/site/_push.php:48
 msgid "<b>Pushing</b> to (destination)"
 msgstr ""
 
@@ -3055,26 +3065,40 @@ msgid "Database Contents"
 msgstr ""
 
 #: destinations/site/_pushpull_foot.php:150
-msgid "Plugins"
+msgid "Active Plugins"
 msgstr ""
 
 #: destinations/site/_pushpull_foot.php:162
 msgid "Active Theme"
 msgstr ""
 
-#: destinations/site/_pushpull_foot.php:167
+#: destinations/site/_pushpull_foot.php:168
 msgid "Active theme differs so theme deployment is disabled."
 msgstr ""
 
-#: destinations/site/_pushpull_foot.php:172
-msgid "Source Media / Atachments"
+#: destinations/site/_pushpull_foot.php:178
+msgid "Child theme & theme are the same so files will not be re-sent."
 msgstr ""
 
-#: destinations/site/_pushpull_foot.php:182
-msgid "Begin Pull (BETA)"
+#: destinations/site/_pushpull_foot.php:181
+msgid "Active child theme differs so theme deployment is disabled."
 msgstr ""
 
 #: destinations/site/_pushpull_foot.php:184
+msgid ""
+"Remote site does not support deploying child theme. Update remote "
+"BackupBuddy."
+msgstr ""
+
+#: destinations/site/_pushpull_foot.php:190
+msgid "Source Media / Atachments"
+msgstr ""
+
+#: destinations/site/_pushpull_foot.php:200
+msgid "Begin Pull (BETA)"
+msgstr ""
+
+#: destinations/site/_pushpull_foot.php:202
 msgid "Begin Push (BETA)"
 msgstr ""
 
@@ -3204,13 +3228,13 @@ msgstr ""
 msgid "You do not currently have any backup schedules in BackupBuddy."
 msgstr ""
 
-#: lib/mysqlbuddy/mysqlbuddy.php:560
+#: lib/mysqlbuddy/mysqlbuddy.php:567
 msgid ""
 "Database Server connection status will not be verified as kicker is not "
 "available."
 msgstr ""
 
-#: lib/mysqlbuddy/mysqlbuddy.php:697
+#: lib/mysqlbuddy/mysqlbuddy.php:704
 msgid "Last table dumped before database server went away: "
 msgstr ""
 

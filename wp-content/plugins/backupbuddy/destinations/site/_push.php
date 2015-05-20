@@ -24,7 +24,25 @@ if ( $deployData['remoteInfo']['activeTheme'] == $localInfo['activeTheme'] ) {
 }
 
 
-$activePluginsBInfo = ' (' . count( $deployData['pushPluginFiles'] ) . ' files to push including inactive)';
+if ( isset( $deployData['remoteInfo']['activeChildTheme'] ) ) {
+	if ( $deployData['remoteInfo']['activeChildTheme'] == $localInfo['activeTheme'] ) { // theme & child theme are same (aka not using a child theme)
+		$activeChildThemeBSame = '; same as theme so not re-sending';
+	} else {
+		$activeChildThemeBSame = '';
+	}
+	
+	if ( $deployData['remoteInfo']['activeChildTheme'] == $localInfo['activeChildTheme'] ) {
+		$activeChildThemeBInfo = ' (' . count( $deployData['pushChildThemeFiles'] ) . ' files to push' . $activeChildThemeBSame . ')';
+	} else {
+		$activeChildThemeBInfo = ' (' . __( 'Active child theme differs so not updating.', 'it-l10n-backupbuddy' ) . ')';
+	}
+	$remoteActiveChildTheme = $deployData['remoteInfo']['activeChildTheme'];
+} else {
+	$activeChildThemeBInfo = '';
+	$remoteActiveChildTheme = __( 'Unknown [NOTE: Remote site does not support detecting child theme. Update remote BackupBuddy]', 'it-l10n-backupbuddy' );
+}
+
+$activePluginsBInfo = ' (' . count( $deployData['pushPluginFiles'] ) . ' files to push)';
 
 
 $headFoot = array( __( 'From this site (source)', 'it-l10n-backupbuddy' ), __( '<b>Pushing</b> to (destination)', 'it-l10n-backupbuddy' ) );
@@ -39,6 +57,7 @@ $pushRows = array(
 	'BackupBuddy Version <span style="position: relative; top: -0.5em; font-size: 0.7em;">&Dagger;</span>' => array( $localInfo['backupbuddyVersion'], $deployData['remoteInfo']['backupbuddyVersion'] ),
 	'Active Plugins' => array( $activePluginsA, $activePluginsB . $activePluginsBInfo ),
 	'Active Theme' => array( $localInfo['activeTheme'], $deployData['remoteInfo']['activeTheme'] . ' ' . $activeThemeBInfo ),
+	'Active Child Theme' => array( $localInfo['activeChildTheme'], $remoteActiveChildTheme . ' ' . $activeChildThemeBInfo ),
 	'Media / Attachments' => array( $localInfo['mediaCount'], $deployData['remoteInfo']['mediaCount'] . ' (' . count( $deployData['pushMediaFiles'] ) . ' files to push)' ),
 );
 

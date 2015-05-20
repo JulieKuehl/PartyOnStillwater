@@ -263,44 +263,54 @@ class backupbuddy_remote_api {
 	// Receive theme file.
 	private static function _verb_sendFile_theme() {
 		self::_sendFile( 'theme' );
-	} // End _verb_sendFile_backup().
+	} // End _verb_sendFile_theme().
+	
+	// Receive child theme file.
+	private static function _verb_sendFile_childTheme() {
+		self::_sendFile( 'childTheme' );
+	} // End _verb_sendFile_childtheme().
 	
 	// Receive plugin file.
 	private static function _verb_sendFile_plugin() {
 		self::_sendFile( 'plugin' );
-	} // End _verb_sendFile_backup().
+	} // End _verb_sendFile_plugin().
 	
 	// Receive backup archive.
 	private static function _verb_sendFile_media() {
 		self::_sendFile( 'media' );
-	} // End _verb_sendFile_backup().
+	} // End _verb_sendFile_media().
 	
 	// Testing file send ability. File is transient; stored in temp dir momentarily.
 	private static function _verb_sendFile_test() {
 		self::_sendFile( 'test' );
-	} // End _verb_sendFile_backup().
+	} // End _verb_sendFile_test().
 	
 	
-	// Send backup archive.
+	
+	// Get backup archive.
 	private static function _verb_getFile_backup() {
 		self::_getFile( 'backup' );
-	} // End _verb_sendFile_backup().
+	} // End _verb_getFile_backup().
 	
-	
-	// Send theme file.
+	// Get theme file.
 	private static function _verb_getFile_theme() {
 		self::_getFile( 'theme' );
-	} // End _verb_sendFile_backup().
+	} // End _verb_getFile_theme().
 	
-	// Send plugin file.
+	// Get child theme file.
+	private static function _verb_getFile_childTheme() {
+		self::_getFile( 'childTheme' );
+	} // End _verb_getFile_childTeme().
+	
+	// Get plugin file.
 	private static function _verb_getFile_plugin() {
 		self::_getFile( 'plugin' );
-	} // End _verb_sendFile_backup().
+	} // End _verb_getFile_plugin().
 	
-	// Send backup archive.
+	// Get backup archive.
 	private static function _verb_getFile_media() {
 		self::_getFile( 'media' );
-	} // End _verb_sendFile_backup().
+	} // End _verb_getFile_media().
 	
 	
 	
@@ -322,8 +332,9 @@ class backupbuddy_remote_api {
 		} elseif ( 'plugin' == $type ) {
 			$rootDir = wp_normalize_path( WP_PLUGIN_DIR ) . '/';
 		} elseif ( 'theme' == $type ) {
-			//$rootDir = WP_CONTENT_DIR . '/themes/';
 			$rootDir = get_template_directory() . '/';
+		} elseif ( 'childTheme' == $type ) {
+			$rootDir = get_stylesheet_directory() . '/';
 		} elseif( 'test' == $type ) {
 			$rootDir = backupbuddy_core::getTempDirectory();
 		} else {

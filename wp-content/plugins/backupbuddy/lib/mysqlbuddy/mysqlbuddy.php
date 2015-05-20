@@ -396,6 +396,13 @@ class pb_backupbuddy_mysqlbuddy {
 			pb_backupbuddy::status( 'details', 'mysqlbuddy: Using custom port `' . $this->_database_port . '` based on DB_HOST setting.' );
 		}
 		
+		// Set default charset if available.
+		global $wpdb;
+		if ( isset( $wpdb ) ) {
+			pb_backupbuddy::status( 'details', 'wpdb charset override for commandline: ' . $wpdb->charset );
+			$command .= " --default-character-set=" . $wpdb->charset;
+		}
+		
 		// TODO WINDOWS NOTE: information in the MySQL documentation about mysqldump needing to use --result-file= on Windows to avoid some issue with line endings.
 		/*
 		Notes:
@@ -875,8 +882,15 @@ class pb_backupbuddy_mysqlbuddy {
 			pb_backupbuddy::status( 'details', 'mysqlbuddy: Using sockets in command.' );
 		}
 		
+		// Set default charset if available.
+		global $wpdb;
+		if ( isset( $wpdb ) ) {
+			pb_backupbuddy::status( 'details', 'wpdb charset override for commandline: ' . $wpdb->charset );
+			$command .= " --default-character-set=" . $wpdb->charset;
+		}
+		
 		//$command .= " --host={$this->_database_host} --user={$this->_database_user} --password={$this->_database_pass} --default_character_set utf8 {$this->_database_name} < {$sql_file}";
-		$command .= " --host=" . escapeshellarg($this->_database_host) . " --user=" . escapeshellarg($this->_database_user) . " --password=" . escapeshellarg($this->_database_pass) . " --default_character_set utf8 " . escapeshellarg($this->_database_name) . " 2>&1 < {$sql_file}"; // 2>&1 redirect STDERR to STDOUT.
+		$command .= " --host=" . escapeshellarg($this->_database_host) . " --user=" . escapeshellarg($this->_database_user) . " --password=" . escapeshellarg($this->_database_pass) . " " . escapeshellarg($this->_database_name) . " 2>&1 < {$sql_file}"; // 2>&1 redirect STDERR to STDOUT.
 		/********** End preparing command **********/
 		
 		// Run command.

@@ -23,8 +23,28 @@ if ( $deployData['remoteInfo']['activeTheme'] == $localInfo['activeTheme'] ) {
 	$activeThemeBInfo = ' (' . __( 'Active theme differs so not updating.', 'it-l10n-backupbuddy' ) . ')';
 }
 
+if ( isset( $deployData['remoteInfo']['activeChildTheme'] ) ) {
+	if ( $deployData['remoteInfo']['activeChildTheme'] == $localInfo['activeTheme'] ) { // theme & child theme are same (aka not using a child theme)
+		$activeChildThemeBSame = '; same as theme so not re-sending';
+	} else {
+		$activeChildThemeBSame = '';
+	}
+	
+	if ( $deployData['remoteInfo']['activeChildTheme'] == $localInfo['activeChildTheme'] ) {
+		$activeChildThemeBInfo = ' (' . count( $deployData['pullChildThemeFiles'] ) . ' files to pull' . $activeChildThemeBSame . ')';
+	} else {
+		$activeChildThemeBInfo = ' (' . __( 'Active child theme differs so not updating.', 'it-l10n-backupbuddy' ) . ')';
+	}
+	$remoteActiveChildTheme = $deployData['remoteInfo']['activeChildTheme'];
+} else {
+	$activeChildThemeBInfo = '';
+	$remoteActiveChildTheme = __( 'Unknown [NOTE: Remote site does not support detecting child theme. Update remote BackupBuddy]', 'it-l10n-backupbuddy' );
+}
 
-$activePluginsAInfo = ' (' . count( $deployData['pullPluginFiles'] ) . ' files to pull including inactive)';
+
+
+
+$activePluginsAInfo = ' (' . count( $deployData['pullPluginFiles'] ) . ' files to pull)';
 
 
 $headFoot = array( __( '<b>Pulling</b> from (source)', 'it-l10n-backupbuddy' ), __( 'To this site (destination)', 'it-l10n-backupbuddy' ) );
@@ -39,6 +59,7 @@ $pushRows = array(
 	'BackupBuddy Version <span style="position: relative; top: -0.5em; font-size: 0.7em;">&Dagger;</span>' => array( $deployData['remoteInfo']['backupbuddyVersion'], $localInfo['backupbuddyVersion'] ),
 	'Active Plugins' => array( $activePluginsB, $activePluginsA . $activePluginsAInfo ),
 	'Active Theme' => array( $deployData['remoteInfo']['activeTheme'], $localInfo['activeTheme'] . ' ' . $activeThemeBInfo ),
+	'Active Child Theme' => array( $remoteActiveChildTheme, $localInfo['activeChildTheme'] . ' ' . $activeChildThemeBInfo ),
 	'Media / Attachments' => array( $deployData['remoteInfo']['mediaCount'], $localInfo['mediaCount'] . ' (' . count( $deployData['pullMediaFiles'] ) . ' files to pull)' ),
 );
 

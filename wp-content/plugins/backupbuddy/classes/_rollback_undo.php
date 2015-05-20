@@ -100,7 +100,7 @@ if ( ! file_exists( ABSPATH . '.maintenance' ) ) {
 
 
 // Find tables matching temp OLD (original live tables) prefix.
-$tempPrefix = 'BBold-' . substr( $serial, 0, 4 ) . '_';
+$tempPrefix = 'bbold-' . substr( $serial, 0, 4 ) . '_';
 $sql = "SELECT table_name FROM information_schema.tables WHERE table_name LIKE '" . str_replace( '_', '\_', $tempPrefix ) . "%' AND table_schema = DATABASE()";
 echo 'Looking for tables with prefix `' . $tempPrefix . '` to rename.<br>';
 if ( false === ( $tempTables = mysql_query( $sql ) ) ) {
@@ -108,7 +108,7 @@ if ( false === ( $tempTables = mysql_query( $sql ) ) ) {
 	die();
 }
 
-// Loop through all BBold-SERIAL_ tables, renaming them back to live, deleting collisions as they occur.
+// Loop through all bbold-SERIAL_ tables, renaming them back to live, deleting collisions as they occur.
 while( $tempTable = mysql_fetch_row( $tempTables ) ) {
 	$nonTempName = str_replace( $tempPrefix, '', $tempTable[0] );
 
@@ -136,14 +136,14 @@ while( $tempTable = mysql_fetch_row( $tempTables ) ) {
 
 
 // Drop any remaining temporary just-imported tables.
-$tempPrefix = 'BBnew-'; //. substr( $serial, 0, 4 ) . '_';
+$tempPrefix = 'bbnew-'; //. substr( $serial, 0, 4 ) . '_';
 $sql = "SELECT table_name FROM information_schema.tables WHERE table_name LIKE '" . str_replace( '_', '\_', $tempPrefix ) . "%' AND table_schema = DATABASE()";
 echo 'Looking for tables with prefix `' . $tempPrefix . '` to delete.<br>';
 if ( false === ( $tempTables = mysql_query( $sql ) ) ) {
 	echo 'Error #89294: `' . mysql_error() . '` in SQL `' . $sql . '`.<br>';
 	die();
 }
-// Loop through all BBnew-SERIAL_ tables, dropping.
+// Loop through all bbnew-SERIAL_ tables, dropping.
 while( $tempTable = mysql_fetch_row( $tempTables ) ) {
 	if ( false === mysql_query("DROP TABLE `" . mysql_real_escape_string( $tempTable[0] ) . "`") ) {
 		echo 'Error #24873: `' . mysql_error() . '`.<br>';

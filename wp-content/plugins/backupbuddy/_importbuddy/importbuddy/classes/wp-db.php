@@ -1,4 +1,6 @@
 <?php
+// Modified for BB v6.0.0.6 to store set charset in $wpdb->charset for utfmb4 handling with mysqlbuddy.
+
 /**
  * WordPress DB Class
  *
@@ -622,6 +624,7 @@ class wpdb {
 			$this->charset = DB_CHARSET;
 	}
 
+	// MODIFIED TO SET charset and collage into class vars - Dustin Bolton - May 13, 2015.
 	/**
 	 * Sets the connection's character set.
 	 *
@@ -646,6 +649,9 @@ class wpdb {
 				mysql_query( $query, $dbh );
 			}
 		}
+		
+		$this->charset = $charset;
+		$this->collate = $collate;
 	}
 
 	/**

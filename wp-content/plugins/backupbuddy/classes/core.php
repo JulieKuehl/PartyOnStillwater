@@ -1664,7 +1664,7 @@ class backupbuddy_core {
 	
 	/* cleanup_temp_tables()
 	 *
-	 * Deletes any temporary BackupBuddy tables used by deployment or rollback functionality. Tables prefixed with BBold- or BBnew-.
+	 * Deletes any temporary BackupBuddy tables used by deployment or rollback functionality. Tables prefixed with bbold- or bbnew-.
 	 *
 	 * @param	string	$forceSerial	Optional. If provided then this only this serial will be cleaned up AND it will be cleaned up now regardless of its age.
 	 * @return	null
@@ -1680,7 +1680,7 @@ class backupbuddy_core {
 		foreach( $cleanups as $cleanup_serial => $start_time ) {
 			
 			if ( ( time() - $start_time ) > backupbuddy_constants::CLEANUP_MAX_STATUS_LOG_AGE ) {
-				if ( false !== ( $results = mysql_query( "SELECT table_name FROM information_schema.tables WHERE ( ( table_name LIKE 'BBnew-" . substr( $cleanup_serial, 0, 4 ) . "\_%' ) OR ( table_name LIKE 'BBold-" . substr( $cleanup_serial, 0, 4 ) . "\_%' ) ) AND table_schema = DATABASE()" ) ) ) {
+				if ( false !== ( $results = mysql_query( "SELECT table_name FROM information_schema.tables WHERE ( ( table_name LIKE 'bbnew-" . substr( $cleanup_serial, 0, 4 ) . "\_%' ) OR ( table_name LIKE 'bbold-" . substr( $cleanup_serial, 0, 4 ) . "\_%' ) ) AND table_schema = DATABASE()" ) ) ) {
 						while( $result = mysql_fetch_row( $results ) ) {
 							if ( false === mysql_query( "DROP TABLE `" . mysql_real_escape_string( $result[0] ) . "`") ) {
 								pb_backupbuddy::status( 'details', 'Error #8493984: Unable to drop temp rollback table `' . $result['table_name'] . '`.' );

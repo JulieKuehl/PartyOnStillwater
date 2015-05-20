@@ -36,15 +36,18 @@ class backupbuddy_deploy {
 				'destinationSettings' => $destinationSettings,
 				'startTime' => time(),
 				'backupProfile' => '',
-				'sendTheme' => false, // Send active theme to sync
-				'sendPlugins' => false, // Send plugins of differing versions to sync
-				'sendMedia' => false,
+				'sendTheme' => false, // Send active theme's differing files.
+				'sendChildTheme' => false, // Send active child theme's differing files.
+				'sendPlugins' => false, // Send plugins of differing versions.
+				'sendMedia' => false, // Send differing media files.
 				
 				'pushThemeFiles' => array(),
+				'pushChildThemeFiles' => array(),
 				'pushPluginFiles' => array(),
 				'pushMediaFiles' => array(),
 				
 				'pullThemeFiles' => array(),
+				'pullChildThemeFiles' => array(),
 				'pullPluginFiles' => array(),
 				'pullMediaFiles' => array(),
 				
@@ -80,13 +83,21 @@ class backupbuddy_deploy {
 		$this->_state['pushPluginFiles'] = $this->calculateFileDiff( $sourceInfo['pluginSignatures'], $this->_state['remoteInfo']['pluginSignatures'] );
 		$this->_state['pullPluginFiles'] = $this->calculateFileDiff( $this->_state['remoteInfo']['pluginSignatures'], $sourceInfo['pluginSignatures'] );
 		
-		if ( $sourceInfo['activeTheme'] == $this->_state['remoteInfo']['activeTheme'] ) {
-			// Calculate themes that do not match.
+		if ( $sourceInfo['activeTheme'] == $this->_state['remoteInfo']['activeTheme'] ) { // Same theme so calculate theme files that do not match.
 			$this->_state['pushThemeFiles'] = $this->calculateFileDiff( $sourceInfo['themeSignatures'], $this->_state['remoteInfo']['themeSignatures'] );
 			$this->_state['pullThemeFiles'] = $this->calculateFileDiff( $this->_state['remoteInfo']['themeSignatures'], $sourceInfo['themeSignatures'] );
 		} else {
 			$this->_state['sendTheme'] = false;
-			pb_backupbuddy::status( 'details', 'Different themes. No theme data will be sent.' );
+			pb_backupbuddy::status( 'details', 'Different themes. Theme data will not be sent.' );
+		}
+		
+		// Note: child theme support added in 6.0.0.6 so must check that remote index exists.
+		if ( ( isset( $this->_state['remoteInfo']['activeChildTheme'] ) ) && ( $sourceInfo['activeChildTheme'] == $this->_state['remoteInfo']['activeChildTheme'] ) ) { // Same child theme so calculate theme files that do not match.
+			$this->_state['pushChildThemeFiles'] = $this->calculateFileDiff( $sourceInfo['childThemeSignatures'], $this->_state['remoteInfo']['childThemeSignatures'] );
+			$this->_state['pullChildThemeFiles'] = $this->calculateFileDiff( $this->_state['remoteInfo']['childThemeSignatures'], $sourceInfo['childThemeSignatures'] );
+		} else {
+			$this->_state['sendChildTheme'] = false;
+			pb_backupbuddy::status( 'details', 'Different child themes. Theme data will not be sent.' );
 		}
 		
 		// Calculate media files that do not match.
@@ -99,9 +110,11 @@ class backupbuddy_deploy {
 		
 		unset( $sourceInfo['mediaSignatures'] );
 		unset( $sourceInfo['themeSignatures'] );
+		unset( $sourceInfo['childThemeSignatures'] );
 		unset( $sourceInfo['pluginSignatures'] );
 		unset( $this->_state['remoteInfo']['mediaSignatures'] );
 		unset( $this->_state['remoteInfo']['themeSignatures'] );
+		unset( $this->_state['remoteInfo']['childThemeSignatures'] );
 		unset( $this->_state['remoteInfo']['pluginSignatures'] );
 		return true;
 	} // End start().

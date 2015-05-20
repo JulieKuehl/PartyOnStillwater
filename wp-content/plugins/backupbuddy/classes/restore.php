@@ -33,7 +33,7 @@ class backupbuddy_restore {
 			'archive' => '',					// Full archive path & filename.
 			'serial' => '',						// Calculated backup serial.
 			'tempPath' => '',					// Temporary path to do extractions into. Trailing path.
-			'data' => array(),					// DAT file array.
+			'dat' => array(),					// DAT file array.
 			'undoURL' => '',					// URL to the undo script, eg http://your.com/backupbuddy_rollback_undo-XXXXXXXX.php
 			'forceMysqlMethods' => array(),		// mysql methods to force for importing. Default to empty array to auto-detect.
 			'autoAdvance' => true,				// Whether or not to auto advance (ie for web-based rollback auto-refresh to next step).
@@ -413,7 +413,7 @@ class backupbuddy_restore {
 			$this->_state['databaseSettings']['username'] = DB_USER;
 			$this->_state['databaseSettings']['password'] = DB_PASSWORD;
 			
-			$this->_state['databaseSettings']['prefix'] = 'BBnew-' . substr( $this->_state['serial'], 0, 4 ) . '_';
+			$this->_state['databaseSettings']['prefix'] = 'bbnew-' . substr( $this->_state['serial'], 0, 4 ) . '_';
 			
 			$forceMysqlMethods = array( pb_backupbuddy::$options['database_method_strategy'] );
 		}
@@ -503,7 +503,7 @@ class backupbuddy_restore {
 		}
 		
 		// Calculate temporary table prefixes.
-		$newPrefix = 'BBnew-' . substr( $this->_state['serial'], 0, 4 ) . '_' . $this->_state['databaseSettings']['prefix']; // Incoming site.
+		$newPrefix = 'bbnew-' . substr( $this->_state['serial'], 0, 4 ) . '_' . $this->_state['databaseSettings']['prefix']; // Incoming site.
 		$oldPrefix = $this->_state['databaseSettings']['prefix']; // Current live site prefix.
 		
 		pb_backupbuddy::status( 'details', 'Copying BackupBuddy settings from options table prefixed with `' . $oldPrefix . '` to `' . $newPrefix . '`.' );
@@ -551,8 +551,8 @@ class backupbuddy_restore {
 		global $wpdb;
 		
 		// Calculate temporary table prefixes.
-		$newPrefix = 'BBnew-' . substr( $this->_state['serial'], 0, 4 ) . '_'; // Temp prefix for holding the NEWly imported data.
-		$oldPrefix = 'BBold-' . substr( $this->_state['serial'], 0, 4 ) . '_'; // Temp prefix for holding the OLD (currently live) data.
+		$newPrefix = 'bbnew-' . substr( $this->_state['serial'], 0, 4 ) . '_'; // Temp prefix for holding the NEWly imported data.
+		$oldPrefix = 'bbold-' . substr( $this->_state['serial'], 0, 4 ) . '_'; // Temp prefix for holding the OLD (currently live) data.
 		
 		// Get newly imported tables with the temp prefix.
 		pb_backupbuddy::status( 'details', 'Checking for newly imported rollback tables with temp prefix `' . $newPrefix . '`.' );
@@ -614,7 +614,7 @@ class backupbuddy_restore {
 		$this->_before( __FUNCTION__ );
 		
 		global $wpdb;
-		$sql = "SELECT table_name FROM information_schema.tables WHERE table_name LIKE 'BBold-" . substr( $this->_state['serial'], 0, 4 ) . "\_%' AND table_schema = DATABASE()";
+		$sql = "SELECT table_name FROM information_schema.tables WHERE table_name LIKE 'bbold-" . substr( $this->_state['serial'], 0, 4 ) . "\_%' AND table_schema = DATABASE()";
 		//echo $sql;
 		$results = $wpdb->get_results( $sql, ARRAY_A );
 		pb_backupbuddy::status( 'details', 'Found ' . count( $results ) . ' tables to drop.' );
@@ -684,9 +684,9 @@ class backupbuddy_restore {
 		$shortSerial = substr( $this->_state['serial'], 0, 4 );
 		
 		// NEW prefix
-		$sql = "SELECT table_name FROM information_schema.tables WHERE table_name LIKE 'BBnew-" . $shortSerial . "\_%' AND table_schema = DATABASE()";
+		$sql = "SELECT table_name FROM information_schema.tables WHERE table_name LIKE 'bbnew-" . $shortSerial . "\_%' AND table_schema = DATABASE()";
 		$results = $wpdb->get_results( $sql, ARRAY_A );
-		pb_backupbuddy::status( 'details', 'Found ' . count( $results ) . ' tables to drop with the prefix `BBnew-' . $shortSerial . '_`.' );
+		pb_backupbuddy::status( 'details', 'Found ' . count( $results ) . ' tables to drop with the prefix `bbnew-' . $shortSerial . '_`.' );
 		$dropCount = 0;
 		foreach( $results as $result ) {
 			if ( false === $wpdb->query( "DROP TABLE `" . backupbuddy_core::dbEscape( $result['table_name'] ) . "`" ) ) {
@@ -698,9 +698,9 @@ class backupbuddy_restore {
 		pb_backupbuddy::status( 'details', 'Dropped `' . $dropCount . '` new tables.' );
 		
 		// OLD prefix
-		$sql = "SELECT table_name FROM information_schema.tables WHERE table_name LIKE 'BBold-" . $shortSerial . "\_%' AND table_schema = DATABASE()";
+		$sql = "SELECT table_name FROM information_schema.tables WHERE table_name LIKE 'bbold-" . $shortSerial . "\_%' AND table_schema = DATABASE()";
 		$results = $wpdb->get_results( $sql, ARRAY_A );
-		pb_backupbuddy::status( 'details', 'Found ' . count( $results ) . ' tables to drop with the prefix `BBold-' . $shortSerial . '_`.' );
+		pb_backupbuddy::status( 'details', 'Found ' . count( $results ) . ' tables to drop with the prefix `bbold-' . $shortSerial . '_`.' );
 		$dropCount = 0;
 		foreach( $results as $result ) {
 			if ( false === $wpdb->query( "DROP TABLE `" . backupbuddy_core::dbEscape( $result['table_name'] ) . "`" ) ) {
@@ -1309,6 +1309,23 @@ class backupbuddy_restore {
 		
 		global $wpdb;
 		$wpdb = new wpdb( $this->_state['databaseSettings']['username'], $this->_state['databaseSettings']['password'], $this->_state['databaseSettings']['database'],$this->_state['databaseSettings']['server'] );
+		
+		// See if we have a specified character set and collation to use from the source site.
+		$charset = null;
+		$collate = null;
+		if ( isset( $this->_state['dat']['db_charset'] ) ) {
+			$charset = $this->_state['dat']['db_charset'];
+		}
+		if ( isset( $this->_state['dat']['db_collate'] ) ) {
+			$collate = $this->_state['dat']['db_collate'];
+		}
+		if ( ( null !== $charset ) || ( null !== $collate ) ) {
+			pb_backupbuddy::status( 'details', 'Setting charset to `' . $charset . '` and collate to `' . $collate . '` based on source site.' );
+			$wpdb->set_charset( $wpdb->dbh, $charset, $collate );
+		} else {
+			pb_backupbuddy::status( 'details', 'Charset nor collate are in DAT file. Using defaults for database connection.' );
+			pb_backupbuddy::status( 'details', 'Charset in wpdb: ' . $wpdb->charset );
+		}
 		
 		return true;
 	} // End connectDatabase().
