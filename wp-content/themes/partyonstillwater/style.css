@@ -641,18 +641,12 @@ a {
 
 #masthead {
   height: 10em;
-  margin-top: 0;
   margin-left: auto;
   margin-right: auto;
   max-width: 970px;
   position: absolute;
   top: 0;
-  width: 100%;
-  z-index: 50; }
-
-.site-header {
-  margin-left: auto;
-  margin-right: auto; }
+  width: 100%; }
 
 .social-media-links {
   background-color: #ea128d;
@@ -675,18 +669,19 @@ a {
 .main-navigation {
   background-color: #ea128d;
   color: #fff;
-  padding: .7em;
   position: relative;
   top: -7em;
   z-index: 80; }
   .main-navigation a {
     color: #fff; }
-  .main-navigation :hover {
-    background-color: #50b948; }
   .main-navigation ul {
     position: relative;
     margin-left: auto;
     margin-right: auto; }
+    .main-navigation ul li {
+      padding: .7em; }
+    .main-navigation ul li:hover {
+      background-color: #50b948; }
 
 /*--------------------------------------------------------------
 ## Footer
