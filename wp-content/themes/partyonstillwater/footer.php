@@ -17,6 +17,7 @@
 			<?php endif; ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
+</div><!-- #wrapper -->
 </div><!-- #page -->
 </div><!-- #swoop -->
 

@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8391486c-8c65-4152-9f66-3e64abbf9f8c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/partyonstillwater/front-page.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/variables-site/_colors.scss" afterPath="$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/variables-site/_colors.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/layout/_content-sidebar.scss" afterPath="$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/layout/_content-sidebar.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/site/primary/_header.scss" afterPath="$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/site/primary/_header.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/site/_site.scss" afterPath="$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/site/_site.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/variables-site/_structure.scss" afterPath="$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/variables-site/_structure.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/partyonstillwater/footer.php" afterPath="$PROJECT_DIR$/wp-content/themes/partyonstillwater/footer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/partyonstillwater/header.php" afterPath="$PROJECT_DIR$/wp-content/themes/partyonstillwater/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/partyonstillwater/style.css.map" afterPath="$PROJECT_DIR$/wp-content/themes/partyonstillwater/style.css.map" />
@@ -34,21 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_footer.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/site/primary/_footer.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.454545" vertical-offset="0" max-vertical-offset="360">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="_colors.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/variables-site/_colors.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.090909" vertical-offset="0" max-vertical-offset="594">
-              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+            <state vertical-scroll-proportion="-11.454545" vertical-offset="0" max-vertical-offset="648">
+              <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -64,31 +56,63 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/party/header.php">
+      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.181818" vertical-offset="36" max-vertical-offset="702">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="16" />
+            <state vertical-scroll-proportion="-10.636364" vertical-offset="0" max-vertical-offset="486">
+              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/header.php">
+      <file leaf-file-name="_content-sidebar.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/layout/_content-sidebar.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.727273" vertical-offset="0" max-vertical-offset="684">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.8181818" vertical-offset="0" max-vertical-offset="522">
+              <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_header.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.0" vertical-offset="0" max-vertical-offset="756">
+              <caret line="21" column="44" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="front-page.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/front-page.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="2.079114" vertical-offset="0" max-vertical-offset="1512">
+              <caret line="73" column="25" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
+              <folding>
+                <element signature="e#6#424#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homePage.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/party/homePage.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.5454545" vertical-offset="34" max-vertical-offset="918">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_header.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/site/primary/_header.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.028481012" vertical-offset="0" max-vertical-offset="632">
-              <caret line="1" column="67" selection-start-line="1" selection-start-column="67" selection-end-line="1" selection-end-column="67" />
+            <state vertical-scroll-proportion="-6.5454545" vertical-offset="0" max-vertical-offset="738">
+              <caret line="8" column="69" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -106,18 +130,20 @@
         <option value="$PROJECT_DIR$/wp-content/themes/bootstrap-to-wp/header.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/bootstrap-to-wp/css/reset.css" />
         <option value="$PROJECT_DIR$/wp-content/themes/bootstrap-to-wp/style.css" />
-        <option value="$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/variables-site/_structure.scss" />
         <option value="$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/variables-site/_typography.scss" />
         <option value="$PROJECT_DIR$/wp-content/themes/some-like-it-neat/assets/sass/_grid-settings.scss" />
         <option value="$PROJECT_DIR$/wp-content/themes/some-like-it-neat/assets/sass/layouts/_header.scss" />
         <option value="$PROJECT_DIR$/wp-content/themes/some-like-it-neat/assets/sass/style.scss" />
         <option value="$PROJECT_DIR$/wp-content/themes/partyonstillwater/functions.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/site/primary/_footer.scss" />
-        <option value="$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/variables-site/_colors.scss" />
         <option value="$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/site/_site.scss" />
-        <option value="$PROJECT_DIR$/wp-content/themes/partyonstillwater/footer.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/partyonstillwater/header.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/variables-site/_colors.scss" />
         <option value="$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/site/primary/_header.scss" />
+        <option value="$PROJECT_DIR$/wp-content/themes/partyonstillwater/header.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/partyonstillwater/footer.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/variables-site/_structure.scss" />
+        <option value="$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/layout/_content-sidebar.scss" />
+        <option value="$PROJECT_DIR$/wp-content/themes/partyonstillwater/front-page.php" />
       </list>
     </option>
   </component>
@@ -365,6 +391,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="partyonstillwater" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.party.dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.party.dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="party" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -578,13 +634,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/layout/_content-sidebar.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="656">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/functions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10743801" vertical-offset="1573" max-vertical-offset="3330">
@@ -609,14 +658,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14240506" vertical-offset="0" max-vertical-offset="632">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="11" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/variables-site/_structure.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="632">
-          <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -653,14 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/site/primary/_posts-and-pages.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="654">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.027522936" vertical-offset="342" max-vertical-offset="13194">
@@ -677,14 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/variables-site/_colors.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.090909" vertical-offset="0" max-vertical-offset="594">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/site/_site.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.59810126" vertical-offset="0" max-vertical-offset="632">
@@ -693,10 +718,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/variables-site/_colors.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.454545" vertical-offset="0" max-vertical-offset="648">
+          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/site/primary/_posts-and-pages.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="654">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4272152" vertical-offset="0" max-vertical-offset="632">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state vertical-scroll-proportion="-10.636364" vertical-offset="0" max-vertical-offset="486">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/variables-site/_structure.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+          <caret line="0" column="26" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/site/primary/_header.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5454545" vertical-offset="0" max-vertical-offset="738">
+          <caret line="8" column="69" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/layout/_content-sidebar.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.8181818" vertical-offset="0" max-vertical-offset="522">
+          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.0" vertical-offset="0" max-vertical-offset="756">
+          <caret line="21" column="44" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/party/homePage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5454545" vertical-offset="34" max-vertical-offset="918">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3164557" vertical-offset="88" max-vertical-offset="720">
+          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/party/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62658226" vertical-offset="36" max-vertical-offset="684">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -709,27 +806,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/party/header.php">
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/front-page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.181818" vertical-offset="36" max-vertical-offset="702">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.727273" vertical-offset="0" max-vertical-offset="684">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/partyonstillwater/sass/site/primary/_header.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.028481012" vertical-offset="0" max-vertical-offset="632">
-          <caret line="1" column="67" selection-start-line="1" selection-start-column="67" selection-end-line="1" selection-end-column="67" />
-          <folding />
+        <state vertical-scroll-proportion="2.079114" vertical-offset="0" max-vertical-offset="1512">
+          <caret line="73" column="25" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
+          <folding>
+            <element signature="e#6#424#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

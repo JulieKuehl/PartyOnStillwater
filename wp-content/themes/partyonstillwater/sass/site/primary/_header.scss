@@ -6,18 +6,31 @@
 }
 
 #masthead {
-    background:transparent url('images/header.png') no-repeat;
-    background-color: #000;
+    background:transparent url('images/header.png') no-repeat center;
     height: 158px;
-    margin: 0 auto 10px;
-    max-width: 970px;
+    margin: 0 auto;
+    width: 970px;
     position: absolute;
     top: 0;
     z-index: 50;
+}
+
+.site-header {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #page {
     max-width: 1170px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.main-navigation {
+    background-color: $color__background-nav;
+    color: $color__text-nav;
+
+    :hover {
+        background-color: $color__background-nav-hover;
+    }
 }
