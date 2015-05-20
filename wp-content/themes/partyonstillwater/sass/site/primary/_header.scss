@@ -7,7 +7,9 @@
 
 #masthead {
     height: 10em;
-    margin: 0 auto;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 970px;
     position: absolute;
     top: 0;
@@ -25,6 +27,8 @@
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
     float: right;
+    padding-left: .7em;
+    padding-right: .7em;
     position: absolute;
     top: 0;
     right: 0;
@@ -32,15 +36,7 @@
 
 .social-media-links img {
     height: 3em;
-    padding: .5em .3em .3em;
-}
-
-.social-media-links img:first-of-type {
-    padding-left: 1em;
-}
-
-.social-media-links img:last-of-type {
-    padding-right: 1em;
+    padding: .5em .3em .3em 0;
 }
 
 .weddings-site {
@@ -50,14 +46,23 @@
 .main-navigation {
     background-color: $color__background-nav;
     color: $color__text-nav;
+    padding: .7em;
+    position: relative;
+    top: -7em;
+    z-index: 80;
+
+    a {
+        color: $color__text-nav;
+    }
 
     :hover {
         background-color: $color__background-nav-hover;
     }
+
+    ul {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
-#page {
-    max-width: 1170px;
-    margin-left: auto;
-    margin-right: auto;
-}
