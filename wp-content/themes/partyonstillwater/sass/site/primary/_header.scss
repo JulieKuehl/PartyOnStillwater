@@ -43,6 +43,10 @@
     top: -7em;
     z-index: 80;
 
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+
     a {
         color: $color__text-nav;
     }
@@ -51,6 +55,7 @@
         position: relative;
         margin-left: auto;
         margin-right: auto;
+        max-width: 970px;
 
         li {
             padding: .7em;
