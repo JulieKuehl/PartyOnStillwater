@@ -640,28 +640,50 @@ a {
   z-index: -50; }
 
 #masthead {
-  background: transparent url("images/header.png") no-repeat center;
-  height: 158px;
+  height: 10em;
   margin: 0 auto;
-  width: 970px;
+  max-width: 970px;
   position: absolute;
   top: 0;
+  width: 100%;
   z-index: 50; }
 
 .site-header {
   margin-left: auto;
   margin-right: auto; }
 
-#page {
-  max-width: 1170px;
-  margin-left: auto;
-  margin-right: auto; }
+.social-media-links {
+  background-color: #ea128d;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  float: right;
+  position: absolute;
+  top: 0;
+  right: 0; }
+
+.social-media-links img {
+  height: 3em;
+  padding: .5em .3em .3em; }
+
+.social-media-links img:first-of-type {
+  padding-left: 1em; }
+
+.social-media-links img:last-of-type {
+  padding-right: 1em; }
+
+.weddings-site {
+  float: right; }
 
 .main-navigation {
   background-color: #ea128d;
   color: #fff; }
   .main-navigation :hover {
     background-color: #50b948; }
+
+#page {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto; }
 
 /*--------------------------------------------------------------
 ## Footer

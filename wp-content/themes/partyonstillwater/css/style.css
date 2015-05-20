@@ -493,7 +493,7 @@ a {
     border-radius: 3px;
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
     clip: auto !important;
-    color: #21759b;
+    color: #000;
     display: block;
     font-size: 14px;
     font-size: 0.875rem;
@@ -568,6 +568,9 @@ a {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+.wrapper {
+  width: 100%; }
+
 .content-area {
   float: left;
   margin: 0 -25% 0 0;
@@ -583,7 +586,7 @@ a {
 
 .site-footer {
   clear: both;
-  width: 75%; }
+  width: 100%; }
 
 /*--------------------------------------------------------------
 ## Posts and pages
@@ -612,21 +615,6 @@ a {
   margin: 0 0 1.5em; }
 
 /*--------------------------------------------------------------
-## Header
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Footer
---------------------------------------------------------------*/
-.site-footer {
-  background-color: black;
-  color: white; }
-  .site-footer a {
-    color: white;
-    text-decoration: none; }
-  .site-footer a:hover {
-    color: #ea128d; }
-
-/*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
 .blog .format-aside .entry-title,
@@ -641,6 +629,74 @@ a {
 
 .bypostauthor {
   display: block; }
+
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+#swoop {
+  background: transparent url("images/swoop.png") no-repeat center;
+  background-color: #000;
+  height: 338px;
+  z-index: -50; }
+
+#masthead {
+  height: 10em;
+  margin: 0 auto;
+  max-width: 970px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 50; }
+
+.site-header {
+  margin-left: auto;
+  margin-right: auto; }
+
+.social-media-links {
+  background-color: #ea128d;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  float: right;
+  position: absolute;
+  top: 0;
+  right: 0; }
+
+.social-media-links img {
+  height: 3em;
+  padding: .5em .3em .3em; }
+
+.social-media-links img:first-of-type {
+  padding-left: 1em; }
+
+.social-media-links img:last-of-type {
+  padding-right: 1em; }
+
+.weddings-site {
+  float: right; }
+
+.main-navigation {
+  background-color: #ea128d;
+  color: #fff; }
+  .main-navigation :hover {
+    background-color: #50b948; }
+
+#page {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto; }
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+.site-footer {
+  background-color: black;
+  color: white;
+  width: 100%; }
+  .site-footer a {
+    color: white;
+    text-decoration: none; }
+  .site-footer a:hover {
+    color: #ea128d; }
 
 /*--------------------------------------------------------------
 # Infinite scroll

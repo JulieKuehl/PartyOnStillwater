@@ -26,9 +26,18 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/Party-On-Stillwater-logo_tagline.png" alt="Party on Stillwater logo" />
 <!--			<h1 class="site-title"><a href="--><?php //echo esc_url( home_url( '/' ) ); ?><!--" rel="home">--><?php //bloginfo( 'name' ); ?><!--</a></h1>-->
 <!--			<h2 class="site-description">--><?php //bloginfo( 'description' ); ?><!--</h2>-->
 		</div><!-- .site-branding -->
+		<div class="social-media-links">
+			<a href="http://facebook.com"></a><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/facebook.png" alt="Facebook" /></a>
+			<a href="http://twitter.com"></a><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/twitter.png" alt="Twitter" /></a>
+			<a href="http://pinterest.com"></a><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/pinterest.png" alt="Pinterest" /></a>
+		</div>
+		<div class="weddings-site">
+			<a href=""></a><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/PartyOnWeddings_Nav-tab.png" alt="Party on Weddings logo" /></a>
+		</div>
 	</header><!-- #masthead -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
